@@ -41,15 +41,32 @@ html{
     text-align: center;
 }
 
+.card-number-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
 #card-number {
     outline: none;
+    width: 70%;
+    padding: 0.5em;
+}
+
+.card-number-field {
+    display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .expiration-date {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1.1em 0;
+    margin: 0.9em 0;
 }
 
 .valid-msg {
@@ -73,4 +90,41 @@ html{
 
 .foot-note ul li {
     font-size: 0.8rem;
+}
+
+/* queries */
+
+@media(max-width: 1024px){
+    #credit-card {
+        width: 40%;
+        margin: 10em auto auto;
+    }
+}
+
+@media(max-width: 768px){
+    #credit-card {
+        width: 55%;
+        margin: 10em auto auto;
+    }
+}
+
+@media(max-width: 425px){
+    #credit-card {
+        width: 75%;
+        margin: 10em auto auto;
+    }
+}
+
+@media(max-width: 320px){
+    #credit-card {
+        width: 80%;
+        margin: 10em auto auto;
+    }
+}
+
+@media(max-width: 290px){
+    #credit-card {
+        width: 95%;
+        margin: 10em auto auto;
+    }
 }

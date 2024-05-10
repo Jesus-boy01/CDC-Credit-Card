@@ -1,7 +1,8 @@
 let cardNumber = document.getElementById("card-number");
 let paymentNetworkLogo = document.querySelector(".payment-network-logo");
+let cardNumberText = document.querySelector(".card-number-text");
 
-cardNumber.addEventListener('input', cardNumberFunction);
+cardNumber.addEventListener("input", cardNumberFunction)
 
 function cardNumberFunction() {
     for (let count = 0; count < cardNumber.value.length; count++) {
@@ -11,14 +12,17 @@ function cardNumberFunction() {
         }
 
         if((cardNumber.value[0] === "5") && ((cardNumber.value.substring(0, 4)) !== "5061")){
+            cardNumber.value = cardNumber.value.slice(0, 16);
             masterPaymentNetwork();
         }
 
         if((cardNumber.value[0] === "5") && ((cardNumber.value.substring(0, 4)) === "5061")){
+            cardNumber.value = cardNumber.value.slice(0, 16);
             vervePaymentNetwork();
         }
         
         if((cardNumber.value[0] === "4")){
+            cardNumber.value = cardNumber.value.slice(0, 16);
             visaPaymentNetwork();
         }
     }
@@ -48,8 +52,9 @@ function visaPaymentNetwork() {
     paymentNetworkLogo.innerHTML = handler;
 }
 
-function clearInput(e) {
-    e.preventDefault();
+cardNumber.addEventListener("focusout", getCardNumber);
 
-    cardNumber.reset();
+function getCardNumber() {
+    cardNumberText.innerText = cardNumber.value;
+    cardNumber.classList.add("card-number-field");
 }
