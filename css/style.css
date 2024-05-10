@@ -115,6 +115,13 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 }
 
+@media(max-width: 375px){
+    #credit-card {
+        width: 85%;
+        margin: 10em auto auto;
+    }
+}
+
 @media(max-width: 320px){
     #credit-card {
         width: 80%;
